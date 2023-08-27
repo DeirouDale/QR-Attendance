@@ -6,18 +6,22 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
-
 let scanning = false;
+
 
 qr_code.callback = res => {
   if (res) {
     outputData.innerText = res;
+    outputData.value = res;
+    
     scanning = false;
 
     video.srcObject.getTracks().forEach(track => {
       track.stop();
     });
 
+    document.forms[0].submit(); //will submit first form na ma detect
+    
     qrResult.hidden = false;
     canvasElement.hidden = true;
     btnScanQR.hidden = false;
@@ -26,6 +30,7 @@ qr_code.callback = res => {
     popup.classList.add('active');
   }
 };
+
 
 btnScanQR.onclick = () => {
   navigator.mediaDevices

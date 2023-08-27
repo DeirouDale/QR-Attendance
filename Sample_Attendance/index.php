@@ -1,3 +1,6 @@
+<?php
+    include "includes/connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <title>Sample Attendance</title>
+    
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 </head>
 <body>
@@ -29,7 +33,9 @@
     
     <div id="popup">
         <div id="qr-result" hidden="">
-            <b>Student Number:</b> <span id="outputData"></span>
+            <form action="includes/insert.php" method="post">
+                <input type="hidden" name="outputData" id="outputData">
+            </form>
         </div>
 
     </div>
