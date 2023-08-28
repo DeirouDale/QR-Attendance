@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if (isset($_SESSION['feedback'])  && !empty($_SESSION['feedback'] )) {
+        $feedback = $_SESSION['feedback'];
+    }
     include "includes/connection.php";
 ?>
 <!DOCTYPE html>
@@ -30,14 +34,22 @@
         </canvas>
     
     </div>
-    
+    <div>
+        <span><?php
+            if(!empty($_SESSION['feedback'])){
+                echo $feedback;
+            }
+        ?></span>
+    </div>
     <div id="popup">
         <div id="qr-result" hidden="">
-            <form action="includes/insert.php" method="post">
+            <form method="post">
                 <input type="hidden" name="outputData" id="outputData">
             </form>
+            <?php
+                include "includes/res.php";
+            ?>
         </div>
-
     </div>
     <script src="qrScanner.js"></script>
 </body>

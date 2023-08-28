@@ -1,23 +1,34 @@
 <?php
+    session_start();
     include "connection.php";
 
-    if(isset($_POST['outputData'])){
+    if(isset($_POST['submit'])){
+        $stud_num = $_POST['stud_num'];
+        $current_time = date("h:i A");
 
-        $stud_num = $_POST['outputData'];
+        $sql = "SELECT * FROM `prototype` WHERE stud_num=".$stud_num." AND state=0";
+        $select = $conn->query($sql);
 
-        $result = $conn->query("SELECT * FROM `prototype` WHERE stud_num=".$stud_num."");
-
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-                echo "<span>Name: ". $row['name'] ." ". $row['course'] ." ". $row['year'] ."". $row['section'] ."</span>";
-            }
+        if($select->num_rows>0){
+            $sql = "UPDATE prototype SET time_in='".$current_time."', state=1 WHERE stud_num=".$stud_num;
+            $query=$conn->query($sql);
+            $_SESSION['feedback'] = "Time In Registered";
         }
         else{
-            echo "0 results";
+
+            $sql = "SELECT * FROM `prototype` WHERE stud_num=".$stud_num." AND state=1";
+            $select = $conn->query($sql);
+
+            if($select->num_rows>0){
+                $sql = "UPDATE prototype SET time_out='".$current_time."', state=2 WHERE stud_num=".$stud_num;
+                $query=$conn->query($sql);
+                $_SESSION['feedback'] = "Time Out Registered";
+            }
+            else{
+                $_SESSION['feedback'] = "Time in and Time out is already Registered";
+            }
         }
     }
-
-    
+    header("location: ../index.php");
     $conn->close();
-
 ?>
