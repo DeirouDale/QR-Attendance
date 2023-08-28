@@ -10,7 +10,7 @@
         $select = $conn->query($sql);
 
         if($select->num_rows>0){
-            $sql = "UPDATE prototype SET time_in='".$current_time."', state=1 WHERE stud_num=".$stud_num;
+            $sql = "UPDATE prototype SET time_in=NOW(), state=1 WHERE stud_num=".$stud_num;
             $query=$conn->query($sql);
             $_SESSION['feedback'] = "Time In Registered";
         }
@@ -20,7 +20,7 @@
             $select = $conn->query($sql);
 
             if($select->num_rows>0){
-                $sql = "UPDATE prototype SET time_out='".$current_time."', state=2 WHERE stud_num=".$stud_num;
+                $sql = "UPDATE prototype SET time_out=NOW(), state=2 WHERE stud_num=".$stud_num;
                 $query=$conn->query($sql);
                 $_SESSION['feedback'] = "Time Out Registered";
             }
