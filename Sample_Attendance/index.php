@@ -26,6 +26,14 @@
             <img src="img/sample.png">
         </div>
 
+        <div class="terminal">
+            <span><?php
+                if(!empty($_SESSION['feedback'])){
+                    echo $feedback;
+                }
+            ?></span>
+        </div>
+        
         <button id="btn-scan-qr">
             SCAN
         </button>
@@ -34,22 +42,14 @@
         </canvas>
     
     </div>
-    <div>
-        <span><?php
-            if(!empty($_SESSION['feedback'])){
-                echo $feedback;
-            }
-        ?></span>
-    </div>
-    <div id="popup">
-        <div id="qr-result" hidden="">
-            <form method="post">
-                <input type="hidden" name="outputData" id="outputData">
-            </form>
-            <?php
-                include "includes/res.php";
-            ?>
-        </div>
+
+    <div id="qr-result" hidden="">
+        <form method="post">
+            <input type="hidden" name="outputData" id="outputData">
+        </form>
+        <?php
+            include "includes/res.php";
+        ?>
     </div>
     <script src="qrScanner.js"></script>
 </body>

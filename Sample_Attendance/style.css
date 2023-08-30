@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+}
+body{
+    background-color: #FFFFFF;
 }
 p{
     line-height: 1.5;
@@ -12,7 +14,7 @@ p{
     max-width: 480px;
     text-align: center;
     padding: 40px 20px;
-    background-color: #FDFDFB;
+    min-height:100%;
 }
 
 #container.active{
@@ -29,6 +31,10 @@ p{
 }
 
 #btn-scan-qr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
     font-size: 18px;
     border-radius: 300px;
     width: 70%;
@@ -57,24 +63,6 @@ p{
     max-width: 400px;
 }
 
-#popup{
-    position: fixed;
-    top: 40%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    padding: 20px;
-    box-shadow: 0 5px 30px rgba(0,0,0,.30);
-    background-color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-    border-radius: 20px;
-}
-
-#popup.active{
-    top: 50%;
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
+.terminal{
+    background-color: #9fb1e2;
 }

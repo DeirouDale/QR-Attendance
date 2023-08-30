@@ -25,9 +25,7 @@ qr_code.callback = res => {
     qrResult.hidden = false;
     canvasElement.hidden = true;
     btnScanQR.hidden = false;
-
-    container.classList.add('active');
-    popup.classList.add('active');
+    
   }
 };
 

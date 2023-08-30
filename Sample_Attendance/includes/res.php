@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include "connection.php";
 
     if(isset($_POST['outputData'])){
@@ -12,6 +11,5 @@
         exit();
     }
 
-    
     $conn->close();
 ?>

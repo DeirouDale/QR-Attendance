@@ -27,9 +27,9 @@
                 <span><?php echo "Name: ". $row['name'] ." ". $row['course'] ." ". $row['year'] ."". $row['section']; ?></span>
                 <form method="post" action="includes/insert.php">
                     <input type="hidden" name="stud_num" value="<?php echo $row['stud_num'] ?>">
+                    <input type="hidden" name="stud_name" value="<?php echo $row['name'] ?>">
                     <input type="submit" name="submit">
                 </form>
-                
             <?php
             }
         }
