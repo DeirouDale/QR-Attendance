@@ -20,7 +20,7 @@
 <body>
     <div id="container">
     <?php
-        $result = $conn->query("SELECT * FROM `prototype` WHERE stud_num=".$stud_num);
+        $result = $conn->query("SELECT * FROM `cpe4a` WHERE stud_num=".$stud_num);
 
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){?>

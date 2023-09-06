@@ -1,0 +1,90 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 06, 2023 at 05:21 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `qr_attendance`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cpe4a`
+--
+
+CREATE TABLE `cpe4a` (
+  `stud_num` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `course` varchar(5) NOT NULL,
+  `year` int(2) NOT NULL,
+  `section` varchar(2) NOT NULL,
+  `time_in` varchar(25) DEFAULT NULL,
+  `time_out` varchar(25) DEFAULT NULL,
+  `state` int(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cpe4a`
+--
+
+INSERT INTO `cpe4a` (`stud_num`, `name`, `course`, `year`, `section`, `time_in`, `time_out`, `state`) VALUES
+(20050028, 'SALMO, LANZ BRENT', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050034, 'PALALAY, DIDREY NICOLE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050063, 'MORATAL, VINCENT', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050123, 'CATIWA, KENRIC', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050146, 'PONCE, SELWYNE CHRISTIAN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050174, 'TAYAWA, AEAN GABRIELLE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050237, 'GENOVEA, JASMIN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050978, 'PALACIO, JOHN ISA', 'CPE', 4, 'A', NULL, NULL, 0),
+(20050982, 'BUTIN, LJAN ROSS', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051012, 'PANGANIBAN, DALE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051017, 'PASION, ELDWIN JANLORD', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051024, 'SARABIA, DON ANGELO', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051025, 'PADILLA, DHEZERIEH', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051092, 'PERDIDO, DEXTER JOHN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051094, 'CABATIC, ROVEL HAROLD PAUL', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051096, 'RAYOAN, FRANCES MICAH', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051100, 'ACOSTA, JUSTINE PSALM', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051109, 'AGCAOILI, RHYAN JHAMES', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051113, 'ACOSTA, CHYRA', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051114, 'ERICE, STEFFI RAE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051116, 'GARNACE, REGINA JANE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051117, 'CAGAT, ANDRA CAMILLE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051119, 'ADAYA, RYAN ANTHONY GABRIEL', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051120, 'MANGAOIL, MARIA RUEDEN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051126, 'TEJADA, JANDEL JADE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051127, 'AY-AY, ISMAEL', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051136, 'SINAMPAGA, EDRILLE MAE', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051236, 'QUIMOYOG, CARL DAVEN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051237, 'LIBED, JOHN EMAN', 'CPE', 4, 'A', NULL, NULL, 0),
+(20051246, 'ADAMANA, ADRIAN', 'CPE', 4, 'A', NULL, NULL, 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cpe4a`
+--
+ALTER TABLE `cpe4a`
+  ADD PRIMARY KEY (`stud_num`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

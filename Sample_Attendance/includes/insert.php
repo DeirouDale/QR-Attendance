@@ -8,21 +8,21 @@
         $stud_name = $_POST['stud_name'];
         $current_time = date("h:i A");  // Format the time in 12-hour format with AM/PM
 
-        $sql = "SELECT * FROM `prototype` WHERE stud_num=".$stud_num." AND state=0";
+        $sql = "SELECT * FROM `cpe4a` WHERE stud_num=".$stud_num." AND state=0";
         $select = $conn->query($sql);
 
         if($select->num_rows>0){
-            $sql = "UPDATE prototype SET time_in= '$current_time', state=1 WHERE stud_num=".$stud_num;
+            $sql = "UPDATE cpe4a SET time_in= '$current_time', state=1 WHERE stud_num=".$stud_num;
             $query=$conn->query($sql);
             $_SESSION['feedback'] = "$stud_name: Time In Registered";
         }
         else{
 
-            $sql = "SELECT * FROM `prototype` WHERE stud_num=".$stud_num." AND state=1";
+            $sql = "SELECT * FROM `cpe4a` WHERE stud_num=".$stud_num." AND state=1";
             $select = $conn->query($sql);
 
             if($select->num_rows>0){
-                $sql = "UPDATE prototype SET time_out= '$current_time', state=2 WHERE stud_num=".$stud_num;
+                $sql = "UPDATE cpe4a SET time_out= '$current_time', state=2 WHERE stud_num=".$stud_num;
                 $query=$conn->query($sql);
                 $_SESSION['feedback'] = "$stud_name: Time Out Registered";
             }
